@@ -354,6 +354,9 @@ export default {
     // }
   }
 };
+
+import './assets/jquery-ajax.min.js';
+
 $.getJSON("//api.mcsrvstat.us/1/mc.sunrin.life", function(status) {
   document.querySelector(".status").innerHTML = !status.offline
     ? "ONLINE"
