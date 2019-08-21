@@ -78,7 +78,7 @@
                           <v-btn
                             icon
                             color="green"
-                            href="http://mc.sunrin.life:10001"
+                            href="http://mc.sunrin.life:1001"
                             target="_blank"
                           >
                             <v-icon>mdi-map</v-icon>
@@ -93,7 +93,7 @@
                           <v-btn
                             icon
                             color="green"
-                            href="http://mc.sunrin.life:10002"
+                            href="http://mc.sunrin.life:1002"
                             target="_blank"
                           >
                             <v-icon>mdi-map</v-icon>
@@ -108,7 +108,7 @@
                           <v-btn
                             icon
                             color="green"
-                            href="http://mc.sunrin.life:10003"
+                            href="http://mc.sunrin.life:1003"
                             target="_blank"
                           >
                             <v-icon>mdi-map</v-icon>
@@ -123,7 +123,7 @@
                           <v-btn
                             icon
                             color="green"
-                            href="http://mc.sunrin.life:10004"
+                            href="http://mc.sunrin.life:1004"
                             target="_blank"
                           >
                             <v-icon>mdi-map</v-icon>
@@ -139,7 +139,7 @@
                           <v-btn
                             icon
                             color="green"
-                            href="http://mc.sunrin.life:10005"
+                            href="http://mc.sunrin.life:1005"
                             target="_blank"
                           >
                             <v-icon>mdi-map</v-icon>
