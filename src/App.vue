@@ -160,7 +160,7 @@
               <v-card-title>
                 <v-layout column>
                   <v-layout justify-space-between>
-                    <h5>생야생<v-icon>mdi-beta</v-icon></h5>
+                    <h5>생야생</h5>
                     <h6>/server wild</h6>
                   </v-layout>
                   <ul class="body-2">
@@ -168,7 +168,7 @@
                   </ul>
                   <v-divider class="my-3"></v-divider>
                   <v-layout justify-space-between>
-                    <h5>자유 건축<v-icon>mdi-beta</v-icon></h5>
+                    <h5>자유 건축</h5>
                     <h6>/server build</h6>
                   </v-layout>
                   <ol class="body-2">
@@ -184,7 +184,7 @@
                   </ol>
                   <v-divider class="my-3"></v-divider>
                   <v-layout justify-space-between>
-                    <h5>선린 건축<v-icon>mdi-beta</v-icon></h5>
+                    <h5>선린 건축</h5>
                     <h6>/server srbuild</h6>
                   </v-layout>
                   <ol class="body-2">
