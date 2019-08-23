@@ -77,6 +77,7 @@
                         <td class="text-end">
                           <v-btn
                             icon
+                            small
                             color="green"
                             href="http://mc.sunrin.life:1001"
                             target="_blank"
@@ -92,6 +93,7 @@
                         <td class="text-end">
                           <v-btn
                             icon
+                            small
                             color="green"
                             href="http://mc.sunrin.life:1002"
                             target="_blank"
@@ -107,6 +109,7 @@
                         <td class="text-end">
                           <v-btn
                             icon
+                            small
                             color="green"
                             href="http://mc.sunrin.life:1003"
                             target="_blank"
@@ -122,6 +125,7 @@
                         <td class="text-end">
                           <v-btn
                             icon
+                            small
                             color="green"
                             href="http://mc.sunrin.life:1004"
                             target="_blank"
@@ -130,7 +134,6 @@
                           </v-btn>
                         </td>
                       </tr>
-
                       <tr>
                         <th>스카이블럭 <v-icon small>mdi-beta</v-icon></th>
                         <td>SKYBLOCK</td>
@@ -138,6 +141,7 @@
                         <td class="text-end">
                           <v-btn
                             icon
+                            small
                             color="green"
                             href="http://mc.sunrin.life:1005"
                             target="_blank"
@@ -148,6 +152,24 @@
                       </tr>
                     </tbody>
                   </v-simple-table>
+
+                  <v-divider class="my-3"></v-divider>
+
+                  <v-simple-table class="mt-3 elevation-3">
+                    <tr>
+                      <th>VCS</th>
+                      <td class="text-end">
+                        <v-btn
+                          icon
+                          small
+                          href="https://github.com/sunrinlifemc"
+                          target="_blank"
+                          ><v-icon>mdi-github-circle</v-icon></v-btn
+                        >
+                      </td>
+                    </tr>
+                  </v-simple-table>
+
                   <!-- <v-btn color="green" v-text="'가입하기'" @click="registerDialog = true"></v-btn> -->
                   <!-- <v-btn color="blue lighten-1" v-text="'METRO'" @click="metroDialog = true" disabled="disabled"></v-btn> -->
                 </div>
