@@ -37,23 +37,32 @@
                         </tr>
                         <tr>
                           <th>서버 상태</th>
-                          <td class="text-end status">
-                            <span class="grey--text mr-1">읽어들이는 중</span
-                            ><v-btn icon small loading disabled></v-btn>
+                          <td class="text-end">
+                            <div v-if="!status">
+                              <span class="grey--text mr-1">읽어들이는 중</span>
+                              <v-btn icon small loading disabled></v-btn>
+                            </div>
+                            <div v-else class="light-container">
+                              {{ status ? "ONLINE" : "OFFLINE" }}
+                              <div class="light" :class="status_global"></div>
+                            </div>
                           </td>
                         </tr>
                         <tr>
                           <th>MOTD</th>
-                          <td class="text-end motd">
-                            <span class="grey--text mr-1">읽어들이는 중</span
-                            ><v-btn icon small loading disabled></v-btn>
+                          <td ref="motd" class="text-end">
+                            <span class="grey--text mr-1">읽어들이는 중</span>
+                            <v-btn icon small loading disabled></v-btn>
                           </td>
                         </tr>
                         <tr>
                           <th>접속자</th>
-                          <td class="text-end players">
-                            <span class="grey--text mr-1">읽어들이는 중</span
-                            ><v-btn icon small loading disabled></v-btn>
+                          <td class="text-end">
+                            <div v-if="!players">
+                              <span class="grey--text mr-1">읽어들이는 중</span>
+                              <v-btn icon small loading disabled></v-btn>
+                            </div>
+                            <div v-else v-text="players"></div>
                           </td>
                         </tr>
                       </tbody>
@@ -64,6 +73,7 @@
                     <v-simple-table class="mt-3 elevation-3">
                       <thead>
                         <tr>
+                          <th>상태</th>
                           <th>컨텐츠</th>
                           <th>서버 코드</th>
                           <th>MC 버전</th>
@@ -71,7 +81,10 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
+                        <!-- <tr>
+                          <td class="light-container">
+                            <div class="light" :class="status_wild"></div>
+                          </td>
                           <th>생야생</th>
                           <td>WILD</td>
                           <td>1.12.2</td>
@@ -79,7 +92,7 @@
                             <v-btn
                               icon
                               small
-                              color="green"
+                              color="yellow"
                               href="http://mc.sunrin.life:1001"
                               target="_blank"
                             >
@@ -88,6 +101,9 @@
                           </td>
                         </tr>
                         <tr>
+                          <td class="light-container">
+                            <div class="light" :class="status_build"></div>
+                          </td>
                           <th>자유 건축</th>
                           <td>BUILD</td>
                           <td>1.12.2</td>
@@ -95,7 +111,7 @@
                             <v-btn
                               icon
                               small
-                              color="green"
+                              color="yellow"
                               href="http://mc.sunrin.life:1002"
                               target="_blank"
                             >
@@ -104,6 +120,9 @@
                           </td>
                         </tr>
                         <tr>
+                          <td class="light-container">
+                            <div class="light" :class="status_srbuild"></div>
+                          </td>
                           <th>선린 건축</th>
                           <td>SRBUILD</td>
                           <td>1.12.2</td>
@@ -111,7 +130,7 @@
                             <v-btn
                               icon
                               small
-                              color="green"
+                              color="yellow"
                               href="http://mc.sunrin.life:1003"
                               target="_blank"
                             >
@@ -120,6 +139,9 @@
                           </td>
                         </tr>
                         <tr>
+                          <td class="light-container">
+                            <div class="light" :class="status_beta"></div>
+                          </td>
                           <th>생야생 <v-icon small>mdi-beta</v-icon></th>
                           <td>BETA</td>
                           <td>최신 릴리즈</td>
@@ -127,7 +149,7 @@
                             <v-btn
                               icon
                               small
-                              color="green"
+                              color="yellow"
                               href="http://mc.sunrin.life:1004"
                               target="_blank"
                             >
@@ -136,6 +158,9 @@
                           </td>
                         </tr>
                         <tr>
+                          <td class="light-container">
+                            <div class="light" :class="status_skyblock"></div>
+                          </td>
                           <th>스카이블럭 <v-icon small>mdi-beta</v-icon></th>
                           <td>SKYBLOCK</td>
                           <td>최신 릴리즈</td>
@@ -143,8 +168,46 @@
                             <v-btn
                               icon
                               small
-                              color="green"
+                              color="yellow"
                               href="http://mc.sunrin.life:1005"
+                              target="_blank"
+                            >
+                              <v-icon>mdi-map</v-icon>
+                            </v-btn>
+                          </td>
+                        </tr> -->
+                        <tr>
+                          <td class="light-container">
+                            <div class="light" :class="status_lobby"></div>
+                          </td>
+                          <th>로비(eSports 대회용)</th>
+                          <td>LOBBY</td>
+                          <td>최신 릴리즈</td>
+                          <td class="text-end">
+                            <v-btn
+                              icon
+                              small
+                              color="yellow"
+                              href="http://mc.sunrin.life:1006"
+                              target="_blank"
+                            >
+                              <v-icon>mdi-map</v-icon>
+                            </v-btn>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="light-container">
+                            <div class="light" :class="status_esports"></div>
+                          </td>
+                          <th>집짓기 대회</th>
+                          <td>ESPORTS</td>
+                          <td>최신 릴리즈</td>
+                          <td class="text-end">
+                            <v-btn
+                              icon
+                              small
+                              color="yellow"
+                              href="http://mc.sunrin.life:1007"
                               target="_blank"
                             >
                               <v-icon>mdi-map</v-icon>
@@ -154,9 +217,9 @@
                       </tbody>
                     </v-simple-table>
 
-                    <v-divider class="my-3"></v-divider>
+                    <!-- <v-divider class="my-3"></v-divider> -->
 
-                    <v-simple-table class="mt-3 elevation-3">
+                    <!-- <v-simple-table class="mt-3 elevation-3">
                       <tr>
                         <th>VCS</th>
                         <td class="text-end">
@@ -169,7 +232,7 @@
                           >
                         </td>
                       </tr>
-                    </v-simple-table>
+                    </v-simple-table> -->
 
                     <!-- <v-btn color="green" v-text="'가입하기'" @click="registerDialog = true"></v-btn> -->
                     <!-- <v-btn color="blue lighten-1" v-text="'METRO'" @click="metroDialog = true" disabled="disabled"></v-btn> -->
@@ -179,7 +242,7 @@
             </v-layout>
           </v-flex>
 
-          <v-flex xs12 md6 mt-4>
+          <!-- <v-flex xs12 md6 mt-4>
             <v-layout justify-center>
               <v-card>
                 <v-card-title>
@@ -197,7 +260,9 @@
                       <h6>/server build</h6>
                     </v-layout>
                     <ol class="body-2">
-                      <li>Plot 플러그인 명령어는 /p 로 확인하실 수 있습니다.</li>
+                      <li>
+                        Plot 플러그인 명령어는 /p 로 확인하실 수 있습니다.
+                      </li>
                       <li>
                         서버의 자원을 낭비하는 건축물은 통보없이 철거될 수
                         있습니다.
@@ -213,7 +278,9 @@
                       <h6>/server srbuild</h6>
                     </v-layout>
                     <ol class="body-2">
-                      <li>건축가로 신청하지 않은 일반인은 관람만 가능합니다.</li>
+                      <li>
+                        건축가로 신청하지 않은 일반인은 관람만 가능합니다.
+                      </li>
                       <li>
                         건축가가 아닌 플레이어가 60초 이상 잠수 시 접속이
                         끊어집니다.
@@ -239,7 +306,7 @@
                 </v-card-title>
               </v-card>
             </v-layout>
-          </v-flex>
+          </v-flex> -->
         </v-layout>
       </v-container>
     </v-content>
@@ -274,13 +341,25 @@
 if (/*@cc_on!@*/ false) {
   location.replace("https://cdn.hyunwoo.kim/no_IE/#MC.SUNRIN.LIFE");
 }
+import axios from "axios";
 export default {
   name: "App",
   data: () => ({
     loader: null,
     loading: false,
     copied: false,
-    form: false
+    form: false,
+    status: undefined,
+    motd: undefined,
+    players: undefined,
+    status_global: "light-undefined",
+    status_wild: "light-undefined",
+    status_build: "light-undefined",
+    status_srbuild: "light-undefined",
+    status_beta: "light-undefined",
+    status_skyblock: "light-undefined",
+    status_lobby: "light-undefined",
+    status_esports: "light-undefined"
     // metroDialog: false,
   }),
   watch: {
@@ -291,6 +370,52 @@ export default {
       this.loader = null;
     }
   },
+
+  mounted() {
+    axios.get("//api.mcsrvstat.us/1/mc.sunrin.life").then(response => {
+      let status = response.data;
+      this.status = !status.offline;
+      this.status_global = !status.offline ? "light-online" : "light-offline";
+      this.$refs.motd.innerHTML = status.motd.html[0];
+      this.players = status.players.online + "명 접속 중";
+    });
+    // axios.get("//api.mcsrvstat.us/1/mc.sunrin.life:25566").then(response => {
+    //   this.status_wild = !response.data.offline
+    //     ? "light-online"
+    //     : "light-offline";
+    // });
+    // axios.get("//api.mcsrvstat.us/1/mc.sunrin.life:25567").then(response => {
+    //   this.status_build = !response.data.offline
+    //     ? "light-online"
+    //     : "light-offline";
+    // });
+    // axios.get("//api.mcsrvstat.us/1/mc.sunrin.life:25568").then(response => {
+    //   this.status_srbuild = !response.data.offline
+    //     ? "light-online"
+    //     : "light-offline";
+    // });
+    // axios.get("//api.mcsrvstat.us/1/mc.sunrin.life:25569").then(response => {
+    //   this.status_beta = !response.data.offline
+    //     ? "light-online"
+    //     : "light-offline";
+    // });
+    // axios.get("//api.mcsrvstat.us/1/mc.sunrin.life:25570").then(response => {
+    //   this.status_skyblock = !response.data.offline
+    //     ? "light-online"
+    //     : "light-offline";
+    // });
+    axios.get("//api.mcsrvstat.us/1/mc.sunrin.life:25571").then(response => {
+      this.status_lobby = !response.data.offline
+        ? "light-online"
+        : "light-offline";
+    });
+    axios.get("//api.mcsrvstat.us/1/mc.sunrin.life:25572").then(response => {
+      this.status_esports = !response.data.offline
+        ? "light-online"
+        : "light-offline";
+    });
+  },
+
   methods: {
     copy() {
       var t = document.createElement("textarea");
@@ -303,16 +428,6 @@ export default {
     }
   }
 };
-
-import "./assets/jquery-ajax.min.js";
-$.getJSON("//api.mcsrvstat.us/1/mc.sunrin.life", function(status) {
-  document.querySelector(".status").innerHTML = ! status.offline
-    ? "<div class='light-container'>ONLINE<div class='light light-online'></div></div>"
-    : "<div class='light-container'>OFFLINE<div class='light light-offline'></div></div>";
-  document.querySelector(".motd").innerHTML = status.motd.html;
-  document.querySelector(".players").innerHTML =
-    status.players.online + "명 접속 중";
-});
 </script>
 
 <style>
@@ -328,9 +443,12 @@ $.getJSON("//api.mcsrvstat.us/1/mc.sunrin.life", function(status) {
   margin-left: 5px;
 }
 .light-online {
-  background: rgb(40,201,64);
+  background: rgb(40, 201, 64);
 }
 .light-offline {
-  background: rgb(241,39,26);
+  background: rgb(241, 39, 26);
+}
+.light-undefined {
+  background: rgb(138, 138, 138);
 }
 </style>
