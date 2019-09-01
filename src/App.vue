@@ -137,7 +137,7 @@
                               <v-icon>mdi-map</v-icon>
                             </v-btn>
                           </td>
-                        </tr>
+                        </tr> -->
                         <tr>
                           <td class="light-container">
                             <div class="light" :class="status_beta"></div>
@@ -175,8 +175,8 @@
                               <v-icon>mdi-map</v-icon>
                             </v-btn>
                           </td>
-                        </tr> -->
-                        <tr>
+                        </tr>
+                        <!-- <tr>
                           <td class="light-container">
                             <div class="light" :class="status_lobby"></div>
                           </td>
@@ -213,13 +213,13 @@
                               <v-icon>mdi-map</v-icon>
                             </v-btn>
                           </td>
-                        </tr>
+                        </tr> -->
                       </tbody>
                     </v-simple-table>
 
-                    <!-- <v-divider class="my-3"></v-divider> -->
+                    <v-divider class="my-3"></v-divider>
 
-                    <!-- <v-simple-table class="mt-3 elevation-3">
+                    <v-simple-table class="mt-3 elevation-3">
                       <tr>
                         <th>VCS</th>
                         <td class="text-end">
@@ -232,7 +232,7 @@
                           >
                         </td>
                       </tr>
-                    </v-simple-table> -->
+                    </v-simple-table>
 
                     <!-- <v-btn color="green" v-text="'가입하기'" @click="registerDialog = true"></v-btn> -->
                     <!-- <v-btn color="blue lighten-1" v-text="'METRO'" @click="metroDialog = true" disabled="disabled"></v-btn> -->
@@ -242,12 +242,12 @@
             </v-layout>
           </v-flex>
 
-          <!-- <v-flex xs12 md6 mt-4>
+          <v-flex xs12 md6 mt-4>
             <v-layout justify-center>
               <v-card>
                 <v-card-title>
                   <v-layout column>
-                    <v-layout justify-space-between>
+                    <!-- <v-layout justify-space-between>
                       <h5>생야생</h5>
                       <h6>/server wild</h6>
                     </v-layout>
@@ -286,7 +286,7 @@
                         끊어집니다.
                       </li>
                     </ol>
-                    <v-divider class="my-3"></v-divider>
+                    <v-divider class="my-3"></v-divider> -->
                     <v-layout justify-space-between>
                       <h5>생야생<v-icon>mdi-beta</v-icon></h5>
                       <h6>/server beta</h6>
@@ -306,7 +306,7 @@
                 </v-card-title>
               </v-card>
             </v-layout>
-          </v-flex> -->
+          </v-flex>
         </v-layout>
       </v-container>
     </v-content>
@@ -353,13 +353,13 @@ export default {
     motd: undefined,
     players: undefined,
     status_global: "light-undefined",
-    status_wild: "light-undefined",
-    status_build: "light-undefined",
-    status_srbuild: "light-undefined",
+    // status_wild: "light-undefined",
+    // status_build: "light-undefined",
+    // status_srbuild: "light-undefined",
     status_beta: "light-undefined",
     status_skyblock: "light-undefined",
-    status_lobby: "light-undefined",
-    status_esports: "light-undefined"
+    // status_lobby: "light-undefined",
+    // status_esports: "light-undefined"
     // metroDialog: false,
   }),
   watch: {
@@ -394,26 +394,26 @@ export default {
     //     ? "light-online"
     //     : "light-offline";
     // });
-    // axios.get("//api.mcsrvstat.us/1/mc.sunrin.life:25569").then(response => {
-    //   this.status_beta = !response.data.offline
-    //     ? "light-online"
-    //     : "light-offline";
-    // });
-    // axios.get("//api.mcsrvstat.us/1/mc.sunrin.life:25570").then(response => {
-    //   this.status_skyblock = !response.data.offline
-    //     ? "light-online"
-    //     : "light-offline";
-    // });
-    axios.get("//api.mcsrvstat.us/1/mc.sunrin.life:25571").then(response => {
-      this.status_lobby = !response.data.offline
+    axios.get("//api.mcsrvstat.us/1/mc.sunrin.life:25569").then(response => {
+      this.status_beta = !response.data.offline
         ? "light-online"
         : "light-offline";
     });
-    axios.get("//api.mcsrvstat.us/1/mc.sunrin.life:25572").then(response => {
-      this.status_esports = !response.data.offline
+    axios.get("//api.mcsrvstat.us/1/mc.sunrin.life:25570").then(response => {
+      this.status_skyblock = !response.data.offline
         ? "light-online"
         : "light-offline";
     });
+    // axios.get("//api.mcsrvstat.us/1/mc.sunrin.life:25571").then(response => {
+    //   this.status_lobby = !response.data.offline
+    //     ? "light-online"
+    //     : "light-offline";
+    // });
+    // axios.get("//api.mcsrvstat.us/1/mc.sunrin.life:25572").then(response => {
+    //   this.status_esports = !response.data.offline
+    //     ? "light-online"
+    //     : "light-offline";
+    // });
   },
 
   methods: {
@@ -434,7 +434,7 @@ export default {
 .light-container {
   display: flex;
   align-items: center;
-  justify-content: right;
+  justify-content: flex-end;
 }
 .light {
   border-radius: 50%;
