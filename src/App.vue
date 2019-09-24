@@ -214,6 +214,25 @@
                             </v-btn>
                           </td>
                         </tr> -->
+                        <tr>
+                          <td class="light-container">
+                            <div class="light" :class="status_iwop"></div>
+                          </td>
+                          <th>IWOP</th>
+                          <td>IWOP</td>
+                          <td>1.12.2</td>
+                          <td class="text-end">
+                            <v-btn
+                              icon
+                              small
+                              color="yellow"
+                              href="http://mc.sunrin.life:1008"
+                              target="_blank"
+                            >
+                              <v-icon>mdi-map</v-icon>
+                            </v-btn>
+                          </td>
+                        </tr>
                       </tbody>
                     </v-simple-table>
 
@@ -349,9 +368,9 @@ export default {
     loading: false,
     copied: false,
     form: false,
-    status: undefined,
-    motd: undefined,
-    players: undefined,
+    status: null,
+    motd: null,
+    players: null,
     status_global: "light-undefined",
     // status_wild: "light-undefined",
     // status_build: "light-undefined",
@@ -360,6 +379,7 @@ export default {
     status_skyblock: "light-undefined",
     // status_lobby: "light-undefined",
     // status_esports: "light-undefined"
+    status_iwop: "light-undefined"
     // metroDialog: false,
   }),
   watch: {
@@ -414,6 +434,11 @@ export default {
     //     ? "light-online"
     //     : "light-offline";
     // });
+    axios.get("//api.mcsrvstat.us/1/mc.sunrin.life:25573").then(response => {
+      this.status_iwop = !response.data.offline
+        ? "light-online"
+        : "light-offline";
+    });
   },
 
   methods: {
