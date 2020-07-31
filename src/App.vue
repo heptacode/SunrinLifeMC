@@ -296,8 +296,8 @@ import axios from "axios";
 import { Vue, Component, Watch } from "vue-property-decorator";
 @Component({})
 export default class App extends Vue {
-  loader: App;
-  loading: boolean = false;
+  // loader: any;
+  // loading: boolean = false;
   copied: boolean = false;
   form: boolean = false;
   status: boolean = false;
@@ -313,13 +313,14 @@ export default class App extends Vue {
   // status_esports: "light-undefined"
   // status_iwop: string = "light-undefined";
   // metroDialog: false,
-  @Watch("loader")
-  isLoaderChanged() {
-    let l: any = this.loader;
-    this[l] = !this[l];
-    setTimeout(() => (this[l] = false), 2000);
-    this.loader = null;
-  }
+
+  // @Watch("loader")
+  // isLoaderChanged() {
+  //   let l: any = this.loader;
+  //   this[l] = !this[l];
+  //   setTimeout(() => (this[l] = false), 2000);
+  //   this.loader = null;
+  // }
 
   mounted() {
     axios.get("//api.mcsrvstat.us/1/mc.sunrin.life").then(response => {
