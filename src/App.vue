@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-content>
+    <v-main>
       <v-container>
         <h2>SunrinLifeMC</h2>
         <v-layout row wrap align-start justify-center>
@@ -260,7 +260,7 @@
           </v-flex> -->
         </v-layout>
       </v-container>
-    </v-content>
+    </v-main>
 
     <!-- <v-dialog
       v-model="metroDialog"
