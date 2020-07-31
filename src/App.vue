@@ -18,18 +18,7 @@
                             <strong class="yellow--text">mc.sunrin.life</strong>
                             <v-tooltip top>
                               <template v-slot:activator="{ on }">
-                                <v-btn
-                                  icon
-                                  x-small
-                                  class="ml-1"
-                                  @click="copy"
-                                  v-on="on"
-                                  ><v-icon
-                                    v-text="
-                                      !copied ? 'mdi-content-copy' : 'mdi-check'
-                                    "
-                                  ></v-icon
-                                ></v-btn>
+                                <v-btn icon x-small class="ml-1" @click="copy" v-on="on"><v-icon v-text="!copied ? 'mdi-content-copy' : 'mdi-check'"></v-icon></v-btn>
                               </template>
                               <span>주소 복사</span>
                             </v-tooltip>
@@ -146,13 +135,7 @@
                           <td>BETA</td>
                           <td>최신 릴리즈</td>
                           <td class="text-end">
-                            <v-btn
-                              icon
-                              small
-                              color="yellow"
-                              href="http://mc.sunrin.life:1004"
-                              target="_blank"
-                            >
+                            <v-btn icon small color="yellow" href="http://mc.sunrin.life:1004" target="_blank">
                               <v-icon>mdi-map</v-icon>
                             </v-btn>
                           </td>
@@ -165,13 +148,7 @@
                           <td>SKYBLOCK</td>
                           <td>최신 릴리즈</td>
                           <td class="text-end">
-                            <v-btn
-                              icon
-                              small
-                              color="yellow"
-                              href="http://mc.sunrin.life:1005"
-                              target="_blank"
-                            >
+                            <v-btn icon small color="yellow" href="http://mc.sunrin.life:1005" target="_blank">
                               <v-icon>mdi-map</v-icon>
                             </v-btn>
                           </td>
@@ -222,13 +199,7 @@
                           <td>IWOP</td>
                           <td>1.12.2</td>
                           <td class="text-end">
-                            <v-btn
-                              icon
-                              small
-                              color="yellow"
-                              href="http://mc.sunrin.life:1008"
-                              target="_blank"
-                            >
+                            <v-btn icon small color="yellow" href="http://mc.sunrin.life:1008" target="_blank">
                               <v-icon>mdi-map</v-icon>
                             </v-btn>
                           </td>
@@ -242,13 +213,7 @@
                       <tr>
                         <th>VCS</th>
                         <td class="text-end">
-                          <v-btn
-                            icon
-                            small
-                            href="https://github.com/sunrinlifemc"
-                            target="_blank"
-                            ><v-icon>mdi-github-circle</v-icon></v-btn
-                          >
+                          <v-btn icon small href="https://github.com/sunrinlifemc" target="_blank"><v-icon>mdi-github-circle</v-icon></v-btn>
                         </td>
                       </tr>
                     </v-simple-table>
@@ -361,35 +326,33 @@ if (/*@cc_on!@*/ false) {
   location.replace("https://cdn.hyunwoo.kim/no_IE/#MC.SUNRIN.LIFE");
 }
 import axios from "axios";
-export default {
-  name: "App",
-  data: () => ({
-    loader: null,
-    loading: false,
-    copied: false,
-    form: false,
-    status: null,
-    motd: null,
-    players: null,
-    status_global: "light-undefined",
-    // status_wild: "light-undefined",
-    // status_build: "light-undefined",
-    // status_srbuild: "light-undefined",
-    status_beta: "light-undefined",
-    status_skyblock: "light-undefined",
-    // status_lobby: "light-undefined",
-    // status_esports: "light-undefined"
-    status_iwop: "light-undefined"
-    // metroDialog: false,
-  }),
-  watch: {
-    loader() {
-      let l = this.loader;
-      this[l] = !this[l];
-      setTimeout(() => (this[l] = false), 2000);
-      this.loader = null;
-    }
-  },
+import { Vue, Components, Watch } from "vue-property-decorator";
+Components();
+export default class App extends Vue {
+  loader = null;
+  loading = false;
+  copied = false;
+  form = false;
+  status = null;
+  motd = null;
+  players = null;
+  status_global = "light-undefined";
+  // status_wild: "light-undefined",
+  // status_build: "light-undefined",
+  // status_srbuild: "light-undefined",
+  status_beta = "light-undefined";
+  status_skyblock = "light-undefined";
+  // status_lobby: "light-undefined",
+  // status_esports: "light-undefined"
+  status_iwop = "light-undefined";
+  // metroDialog: false,
+  @Watch("loader")
+  isLoaderChanged() {
+    let l = this.loader;
+    this[l] = !this[l];
+    setTimeout(() => (this[l] = false), 2000);
+    this.loader = null;
+  }
 
   mounted() {
     axios.get("//api.mcsrvstat.us/1/mc.sunrin.life").then(response => {
@@ -415,14 +378,10 @@ export default {
     //     : "light-offline";
     // });
     axios.get("//api.mcsrvstat.us/1/mc.sunrin.life:25569").then(response => {
-      this.status_beta = !response.data.offline
-        ? "light-online"
-        : "light-offline";
+      this.status_beta = !response.data.offline ? "light-online" : "light-offline";
     });
     axios.get("//api.mcsrvstat.us/1/mc.sunrin.life:25570").then(response => {
-      this.status_skyblock = !response.data.offline
-        ? "light-online"
-        : "light-offline";
+      this.status_skyblock = !response.data.offline ? "light-online" : "light-offline";
     });
     // axios.get("//api.mcsrvstat.us/1/mc.sunrin.life:25571").then(response => {
     //   this.status_lobby = !response.data.offline
@@ -435,24 +394,19 @@ export default {
     //     : "light-offline";
     // });
     axios.get("//api.mcsrvstat.us/1/mc.sunrin.life:25573").then(response => {
-      this.status_iwop = !response.data.offline
-        ? "light-online"
-        : "light-offline";
+      this.status_iwop = !response.data.offline ? "light-online" : "light-offline";
     });
-  },
-
-  methods: {
-    copy() {
-      var t = document.createElement("textarea");
-      document.body.appendChild(t);
-      t.value = "mc.sunrin.life";
-      t.select();
-      document.execCommand("copy");
-      document.body.removeChild(t);
-      this.copied = true;
-    }
   }
-};
+  copy() {
+    var t = document.createElement("textarea");
+    document.body.appendChild(t);
+    t.value = "mc.sunrin.life";
+    t.select();
+    document.execCommand("copy");
+    document.body.removeChild(t);
+    this.copied = true;
+  }
+}
 </script>
 
 <style>
