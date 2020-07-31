@@ -6,6 +6,6 @@ module.exports = {
       },
     },
   },
-  publicPath: "/web",
+  publicPath: "/",
   outputDir: "docs",
 };
