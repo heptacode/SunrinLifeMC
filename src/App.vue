@@ -57,9 +57,9 @@
                       </tbody>
                     </v-simple-table>
 
-                    <v-divider class="my-3"></v-divider>
+                    <!-- <v-divider class="my-3"></v-divider> -->
 
-                    <v-simple-table class="mt-3 elevation-3">
+                    <!-- <v-simple-table class="mt-3 elevation-3">
                       <thead>
                         <tr>
                           <th>상태</th>
@@ -70,7 +70,7 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <!-- <tr>
+                        <tr>
                           <td class="light-container">
                             <div class="light" :class="status_wild"></div>
                           </td>
@@ -78,13 +78,7 @@
                           <td>WILD</td>
                           <td>1.12.2</td>
                           <td class="text-end">
-                            <v-btn
-                              icon
-                              small
-                              color="yellow"
-                              href="http://mc.sunrin.life:1001"
-                              target="_blank"
-                            >
+                            <v-btn icon small color="yellow" href="http://mc.sunrin.life:1001" target="_blank">
                               <v-icon>mdi-map</v-icon>
                             </v-btn>
                           </td>
@@ -97,13 +91,7 @@
                           <td>BUILD</td>
                           <td>1.12.2</td>
                           <td class="text-end">
-                            <v-btn
-                              icon
-                              small
-                              color="yellow"
-                              href="http://mc.sunrin.life:1002"
-                              target="_blank"
-                            >
+                            <v-btn icon small color="yellow" href="http://mc.sunrin.life:1002" target="_blank">
                               <v-icon>mdi-map</v-icon>
                             </v-btn>
                           </td>
@@ -116,17 +104,11 @@
                           <td>SRBUILD</td>
                           <td>1.12.2</td>
                           <td class="text-end">
-                            <v-btn
-                              icon
-                              small
-                              color="yellow"
-                              href="http://mc.sunrin.life:1003"
-                              target="_blank"
-                            >
+                            <v-btn icon small color="yellow" href="http://mc.sunrin.life:1003" target="_blank">
                               <v-icon>mdi-map</v-icon>
                             </v-btn>
                           </td>
-                        </tr> -->
+                        </tr>
                         <tr>
                           <td class="light-container">
                             <div class="light" :class="status_beta"></div>
@@ -153,7 +135,7 @@
                             </v-btn>
                           </td>
                         </tr>
-                        <!-- <tr>
+                        <tr>
                           <td class="light-container">
                             <div class="light" :class="status_lobby"></div>
                           </td>
@@ -161,13 +143,7 @@
                           <td>LOBBY</td>
                           <td>최신 릴리즈</td>
                           <td class="text-end">
-                            <v-btn
-                              icon
-                              small
-                              color="yellow"
-                              href="http://mc.sunrin.life:1006"
-                              target="_blank"
-                            >
+                            <v-btn icon small color="yellow" href="http://mc.sunrin.life:1006" target="_blank">
                               <v-icon>mdi-map</v-icon>
                             </v-btn>
                           </td>
@@ -180,17 +156,11 @@
                           <td>ESPORTS</td>
                           <td>최신 릴리즈</td>
                           <td class="text-end">
-                            <v-btn
-                              icon
-                              small
-                              color="yellow"
-                              href="http://mc.sunrin.life:1007"
-                              target="_blank"
-                            >
+                            <v-btn icon small color="yellow" href="http://mc.sunrin.life:1007" target="_blank">
                               <v-icon>mdi-map</v-icon>
                             </v-btn>
                           </td>
-                        </tr> -->
+                        </tr>
                         <tr>
                           <td class="light-container">
                             <div class="light" :class="status_iwop"></div>
@@ -213,7 +183,7 @@
                       <tr>
                         <th>VCS</th>
                         <td class="text-end">
-                          <v-btn icon small href="https://github.com/sunrinlifemc" target="_blank"><v-icon>mdi-github-circle</v-icon></v-btn>
+                          <v-btn icon small href="https://github.com/sunrinlifemc" target="_blank"><v-icon>mdi-github</v-icon></v-btn>
                         </td>
                       </tr>
                     </v-simple-table>
@@ -226,12 +196,12 @@
             </v-layout>
           </v-flex>
 
-          <v-flex xs12 md6 mt-4>
+          <!-- <v-flex xs12 md6 mt-4>
             <v-layout justify-center>
               <v-card>
                 <v-card-title>
                   <v-layout column>
-                    <!-- <v-layout justify-space-between>
+                    <v-layout justify-space-between>
                       <h5>생야생</h5>
                       <h6>/server wild</h6>
                     </v-layout>
@@ -248,12 +218,10 @@
                         Plot 플러그인 명령어는 /p 로 확인하실 수 있습니다.
                       </li>
                       <li>
-                        서버의 자원을 낭비하는 건축물은 통보없이 철거될 수
-                        있습니다.
+                        서버의 자원을 낭비하는 건축물은 통보없이 철거될 수 있습니다.
                       </li>
                       <li>
-                        플롯은 선착순이기 때문에 불필요한 플롯은 관리자에 의해
-                        삭제될 수 있습니다.
+                        플롯은 선착순이기 때문에 불필요한 플롯은 관리자에 의해 삭제될 수 있습니다.
                       </li>
                     </ol>
                     <v-divider class="my-3"></v-divider>
@@ -266,11 +234,10 @@
                         건축가로 신청하지 않은 일반인은 관람만 가능합니다.
                       </li>
                       <li>
-                        건축가가 아닌 플레이어가 60초 이상 잠수 시 접속이
-                        끊어집니다.
+                        건축가가 아닌 플레이어가 60초 이상 잠수 시 접속이 끊어집니다.
                       </li>
                     </ol>
-                    <v-divider class="my-3"></v-divider> -->
+                    <v-divider class="my-3"></v-divider>
                     <v-layout justify-space-between>
                       <h5>생야생<v-icon>mdi-beta</v-icon></h5>
                       <h6>/server beta</h6>
@@ -290,7 +257,7 @@
                 </v-card-title>
               </v-card>
             </v-layout>
-          </v-flex>
+          </v-flex> -->
         </v-layout>
       </v-container>
     </v-content>
@@ -321,34 +288,34 @@
   </v-app>
 </template>
 
-<script>
+<script lang="ts">
 if (/*@cc_on!@*/ false) {
   location.replace("https://cdn.hyunwoo.kim/no_IE/#MC.SUNRIN.LIFE");
 }
 import axios from "axios";
-import { Vue, Components, Watch } from "vue-property-decorator";
-Components();
+import { Vue, Component, Watch } from "vue-property-decorator";
+@Component({})
 export default class App extends Vue {
-  loader = null;
-  loading = false;
-  copied = false;
-  form = false;
-  status = null;
-  motd = null;
-  players = null;
-  status_global = "light-undefined";
+  loader: App;
+  loading: boolean = false;
+  copied: boolean = false;
+  form: boolean = false;
+  status: boolean = false;
+  motd: string = "";
+  players: string = "";
+  status_global: string = "light-undefined";
   // status_wild: "light-undefined",
   // status_build: "light-undefined",
   // status_srbuild: "light-undefined",
-  status_beta = "light-undefined";
-  status_skyblock = "light-undefined";
+  // status_beta: string = "light-undefined";
+  // status_skyblock: string = "light-undefined";
   // status_lobby: "light-undefined",
   // status_esports: "light-undefined"
-  status_iwop = "light-undefined";
+  // status_iwop: string = "light-undefined";
   // metroDialog: false,
   @Watch("loader")
   isLoaderChanged() {
-    let l = this.loader;
+    let l: any = this.loader;
     this[l] = !this[l];
     setTimeout(() => (this[l] = false), 2000);
     this.loader = null;
@@ -359,7 +326,8 @@ export default class App extends Vue {
       let status = response.data;
       this.status = !status.offline;
       this.status_global = !status.offline ? "light-online" : "light-offline";
-      this.$refs.motd.innerHTML = status.motd.html[0];
+      let motd: any = this.$refs.motd;
+      motd.innerHTML = status.motd.html[0];
       this.players = status.players.online + "명 접속 중";
     });
     // axios.get("//api.mcsrvstat.us/1/mc.sunrin.life:25566").then(response => {
@@ -377,12 +345,12 @@ export default class App extends Vue {
     //     ? "light-online"
     //     : "light-offline";
     // });
-    axios.get("//api.mcsrvstat.us/1/mc.sunrin.life:25569").then(response => {
-      this.status_beta = !response.data.offline ? "light-online" : "light-offline";
-    });
-    axios.get("//api.mcsrvstat.us/1/mc.sunrin.life:25570").then(response => {
-      this.status_skyblock = !response.data.offline ? "light-online" : "light-offline";
-    });
+    // axios.get("//api.mcsrvstat.us/1/mc.sunrin.life:25569").then(response => {
+    //   this.status_beta = !response.data.offline ? "light-online" : "light-offline";
+    // });
+    // axios.get("//api.mcsrvstat.us/1/mc.sunrin.life:25570").then(response => {
+    //   this.status_skyblock = !response.data.offline ? "light-online" : "light-offline";
+    // });
     // axios.get("//api.mcsrvstat.us/1/mc.sunrin.life:25571").then(response => {
     //   this.status_lobby = !response.data.offline
     //     ? "light-online"
@@ -393,9 +361,9 @@ export default class App extends Vue {
     //     ? "light-online"
     //     : "light-offline";
     // });
-    axios.get("//api.mcsrvstat.us/1/mc.sunrin.life:25573").then(response => {
-      this.status_iwop = !response.data.offline ? "light-online" : "light-offline";
-    });
+    // axios.get("//api.mcsrvstat.us/1/mc.sunrin.life:25573").then(response => {
+    //   this.status_iwop = !response.data.offline ? "light-online" : "light-offline";
+    // });
   }
   copy() {
     var t = document.createElement("textarea");
