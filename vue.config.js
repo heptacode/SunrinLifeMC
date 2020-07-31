@@ -1,9 +1,10 @@
 module.exports = {
-    css: {
-      loaderOptions: {
-        sass: {
-          data: `@import "~@/sass/main.scss"`,
-        },
+  css: {
+    loaderOptions: {
+      sass: {
+        data: `@import "~@/sass/main.scss"`,
       },
     },
-  }
+  },
+  outputDir: "docs",
+};
